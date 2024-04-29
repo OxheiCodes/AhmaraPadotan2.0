@@ -1,0 +1,78 @@
+body {
+  background-color: black;
+  color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  scroll-margin-top: 80px;
+  scroll-behavior: smooth;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 23px;
+}
+
+.navbar {
+  justify-content: center; /* Center the navbar content */
+}
+
+.navbar-nav {
+  display: flex; /* Make the nav items horizontal */
+  justify-content: center; /* Center the nav items */
+  width: 100%; /* Ensure the nav items span the full width */
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  font-family: oswald;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: 0.84px;
+  text-transform: none;
+  line-height: 14px;
+  margin-top: 30px;
+  text-align: center; /* Center the text within each nav link */
+}
+
+.navbar-nav .nav-link:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+.navbar-nav .nav-link.active {
+  /* Add styles for active nav link if needed */
+}
+
+/* Gallery LightBoxes*/
+/* Image Grid Gallery */
+.row img {
+  cursor: pointer;
+  padding: 50px;
+}
+
+/* Lightbox */
+.modal-dialog {
+  max-width: 800px;
+}
+
+/*Baskerville Font*/
+.baskervville-regular {
+  font-family: "Baskervville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  text-align: center;
+  font-family: oswald;
+  font-weight: 200;
+  height: 10px;
+}
