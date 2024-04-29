@@ -77,7 +77,15 @@ h2 {
   height: 10px;
 }
 
-.evolution-of-gynoids {
-  justify-content: center;
+#evolution-of-gynoids {
   text-align: center;
+  margin-top: 40px;
+}
+
+#evolution-of-gynoids h2 {
+  margin-bottom: 2rem;
+}
+
+#evolution-of-gynoids .row {
+  justify-content: center;
 }
