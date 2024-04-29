@@ -72,11 +72,16 @@ html {
 
 h2 {
   text-align: center;
-  font-family: oswald;
+  font-family: 'Oswald', sans-serif;  /* Ensure font-family is correctly named and fallback is provided */
   font-weight: 200;
-  height: 10px;
+  height: 10px;  /* Check if height is necessary, as it might clip content */
   margin-bottom: 30px;
 }
+
+h2:hover {
+  text-decoration: underline;  /* Adds underline on hover */
+}
+
 
 #evolution-of-gynoids {
   text-align: center;
