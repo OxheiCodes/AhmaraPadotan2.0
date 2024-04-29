@@ -75,11 +75,12 @@ h2 {
   font-family: oswald;
   font-weight: 200;
   height: 10px;
+  margin-bottom: 30px;
 }
 
 #evolution-of-gynoids {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 #evolution-of-gynoids h2 {
