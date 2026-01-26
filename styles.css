@@ -1,10 +1,17 @@
 body {
-  background-color: black;
+  background-color: #000000;
   color: #ffffff;
+  line-height: 1.8;
+  overflow-x: hidden;
+  font-weight: 300;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+* {
+  transition: all 0.3s ease;
 }
 
 :target {
@@ -16,46 +23,99 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 23px;
+  padding: 60px 20px 40px;
+  border-bottom: 1px solid #222;
+}
+
+.logo-container img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(1);
+}
+
+.logo-container img:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
 }
 
 .navbar {
-  justify-content: center; /* Center the navbar content */
+  justify-content: center;
+  border-bottom: 1px solid #222;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.95) 100%);
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-nav {
-  display: flex; /* Make the nav items horizontal */
-  justify-content: center; /* Center the nav items */
-  width: 100%; /* Ensure the nav items span the full width */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 60px;
 }
 
 .navbar-nav .nav-link {
-  color: #ffffff;
-  font-family: oswald;
+  color: #e0e0e0;
+  font-family: 'Oswald', sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 20px;
-  letter-spacing: 0.84px;
-  text-transform: none;
-  line-height: 14px;
-  margin-top: 30px;
-  text-align: center; /* Center the text within each nav link */
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+  font-size: 0.95rem;
 }
 
 .navbar-nav .nav-link:hover {
-  text-decoration: underline;
-  text-decoration-color: white;
+  color: #ffffff;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, #ffffff, transparent);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
 }
 
 .navbar-nav .nav-link.active {
   /* Add styles for active nav link if needed */
 }
 
-/* Gallery LightBoxes*/
-/* Image Grid Gallery */
 .row img {
   cursor: pointer;
-  padding: 50px;
+  padding: 12px;
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #0a0a0a;
+}
+
+.row img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 15px 50px rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  background-color: #111111;
+}
+
+.row [data-toggle="lightbox"] {
+  display: block;
+  overflow: hidden;
+  border-radius: 2px;
 }
 
 /* Lightbox */
@@ -70,28 +130,109 @@ html {
   font-style: normal;
 }
 
-h2 {
-  text-align: center;
-  font-family: 'Oswald', sans-serif;  /* Ensure font-family is correctly named and fallback is provided */
-  font-weight: 200;
-  height: 10px;  /* Check if height is necessary, as it might clip content */
-  margin-bottom: 30px;
+.section {
+  padding: 40px 20px;
+  margin-bottom: 80px;
 }
 
-h2:hover {
-  text-decoration: underline;  /* Adds underline on hover */
+.section:first-of-type {
+  margin-top: 40px;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+  font-size: 3rem;
+  margin-bottom: 60px;
+  margin-top: 80px;
+  letter-spacing: 3px;
+  position: relative;
+  padding-bottom: 25px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+h2:hover::after {
+  width: 120px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 
 #evolution-of-gynoids {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 40px;
+  padding: 40px 0;
 }
 
 #evolution-of-gynoids h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 50px;
+  margin-top: 60px;
 }
 
 #evolution-of-gynoids .row {
   justify-content: center;
+}
+
+
+
+/* Improve contrast and readability */
+.modal-content {
+  background-color: #0a0a0a;
+  border: 1px solid #222;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: #222;
+  background-color: #0a0a0a;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .navbar-nav {
+    gap: 20px;
+    flex-direction: column;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    padding-bottom: 5px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    margin-top: 60px;
+    letter-spacing: 1.5px;
+  }
+  
+  .row img {
+    padding: 8px;
+  }
+  
+  .row img:hover {
+    padding: 6px;
+  }
+  
+  .logo-container {
+    padding: 40px 20px 30px;
+  }
+  
+  .logo-container img {
+    max-width: 220px;
+  }
 }
